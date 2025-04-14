@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- AOS Library CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<body>
+  <header class="nexus-header">
+    <div class="nexus-row">
+      <div class="nexus-logo">NEXUS</div>
+      <nav class="nexus-nav">
+        <ul>
+          <li><a href="#shop">Shop Now</a></li>
+          <li><a href="#phones">Phones</a></li>
+          <li><a href="#accessories">Accessories</a></li>
+          <li><a href="#account">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+          <script>
+            AOS.init({
+              duration: 1000,
+              once: false, // animate every time they scroll
+              offset: 150, // start animation when 150px from viewport
+            });
+          </script>
+          
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Product Features</h2>
+      <div class="feature-grid">
+     <div class="feature">
+    <h3>Fast Performance</h3>
+        <p>Lightning-fast load times and real-time processing power.</p>
+    </div>
+        <div class="feature">
+    <h3>Smart Integration</h3>
+        <p>Seamlessly integrates with all your favorite tools and platforms.</p>
+        </div>
+        <div class="feature">
+     <h3>Secure & Reliable</h3>
+    <p>Top-notch security protocols to protect your data around the clock.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Images Section -->
+<!-- Fullscreen Images Section -->
+<section class="fullpage-images">
+    <img src="C:\\Users\\ameya\\Downloads\\3A-2.webp" alt="Product image 1" class="fullscreen-img zoom-fade-img">
+    <img src="C:\\Users\\ameya\\Downloads\\-original-imahfptqbnyebxjg.webp" alt="Product image 2" class="fullscreen-img zoom-fade-img">
+    <img src="C:\\Users\\ameya\\Downloads\\nothing-phone-2a-plus-5g-grey-256gb-12gb-ram-front-back-view.webp" alt="Product image 3" class="fullscreen-img zoom-fade-img">
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  
+  
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <h2 data-aos="fade-up">What Our Customers Say</h2>
+      <div class="testimonial" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+        <p>"My order was delivered within a day. Absolutely loved it!"</p>
+        <strong>- Alex D.</strong>
+      </div>
+      <div class="testimonial" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+        <p>"Incredible value for the price. Highly recommend!"</p>
+        <strong>- Jamie L.</strong>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  <!-- AOS Library JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation duration in ms
+    once: true      // only animate once
+  });
+</script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".zoom-fade-img").forEach((img) => {
+    gsap.fromTo(img,
+      { scale: 1.3, opacity: 1 },
+      {
+        scale: 1,
+        opacity: 0,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: img,
+          start: "top 75%",    // Starts when the top of the image reaches 75% of the viewport
+          end: "bottom 25%",   // Ends when the bottom of the image reaches 25% of the viewport
+          scrub: true
+        }
+      }
+    );
+  });
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.nexus-header {
+  background-color: black;
+  padding: 1rem 2rem;
+}
+
+.nexus-row {
+  display: flex;
+  align-items: center;
+}
+
+.nexus-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: red;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.nexus-nav {
+  margin-left: 3rem; /* <-- this creates the desired gap from "NEXUS" */
+}
+
+.nexus-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 2rem;
+}
+
+.nexus-nav a {
+  text-decoration: none;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nexus-nav a:hover {
+  color: #ff4d4d;
+}
+
+
+
+</style>
+<style>
+    .fullscreen-hero {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+  
+    .video-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      pointer-events: none; /* So user can't interact with YouTube controls */
+    }
+  
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+  
+    .hero-overlay h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  
+    .hero-overlay p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .btn {
+      background: #fff;
+      color: #0d6efd;
+      padding: 0.8rem 1.6rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+<style>
+
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
+<style>
+    .features, .images, .testimonials {
+      padding: 3rem 0;
+    }
+  
+    .features h2, .images h2, .testimonials h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  
+    .feature-grid {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .feature {
+      flex: 1 1 100px;
+      background:#580202;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .feature h3,
+.feature p {
+  color: black;
+}
+
+</style>
+<style>
+
+.header-nav ul li a {
+  color: white; /* White text for links */
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+.header-nav ul li a:hover {
+  color: #0d6efd; /* Optional: hover effect with blue color */
+}
+</style>
+
+<style>
+.fullpage-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem; /* Adjust vertical space between images */
+  padding: 5rem 0;
+}
+
+.fullscreen-img {
+  width: 75vw;
+  height: auto;
+  max-height: 75vh; /* Decrease the max height to prevent cutting off */
+  object-fit: cover;
+  object-position: top center; /* Ensure the top of the image is prioritized */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+  margin-bottom: 5rem; /* Adds space below the images */
+}
+body {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+
+</style>
+<style>
+
+  /* Optional: Fade-in for hero section */
+  .hero {
+    animation: fadeInTop 1s ease-out;
+  }
+
+  @keyframes fadeInTop {
+    0% {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+    <style>
+    .testimonial {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      margin: 1rem auto;
+      max-width: 700px;
+      border-left: 5px solid #0d6efd;
+      border-radius: 5px;
+    }
+  
+    @media (max-width: 768px) {
+      .feature-grid {
+        flex-direction: column;
+      }
+  
+      .image-gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+  <footer class="footer-section">
+    <div class="footer-content">
+      <p>&copy; 2025 NEXUS. All rights reserved.</p>
+      <p>Contact us at support@Nexus.com</p>
+    </div>
+  </footer>
+  <style>
+    .testimonial {
+  background: #580202;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  border-left: 5px solid #0d6efd;
+  border-radius: 10px;
+  transform: scale(0.98);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.testimonial:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px #580202;
+}
+
+/* Hero Section */
+.fullscreen-hero {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #000; /* Black background */
+}
+
+.header-nav {
+  color: rgb(7, 7, 7); /* White text for navigation */
+}
+
+/* Features Section */
+.features, .testimonials {
+  background-color: #000; /* Black background */
+  color: white; /* White text */
+}
+
+/* Image Section */
+.fullpage-images {
+  display: flex;
+  flex-direction: column; /* Stack the images vertically */
+  align-items: center;
+  gap: 5vh; /* Space between images */
+  background-color: black;
+  padding: 5vh 0; /* Space around images */
+  height: auto; /* Allow the section to expand based on content */
+  overflow: visible; /* Ensure all images are visible without clipping */
+}
+
+.fullscreen-img {
+  width: 60vw;  /* Set a medium size for images (60% of the viewport width) */
+  height: auto; /* Maintain aspect ratio of the images */
+  object-fit: contain; /* Ensure the image fits within the container */
+  object-position: center;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  transition: transform 0.6s ease;
+}
+
+@media (max-width: 768px) {
+  .fullscreen-img {
+    width: 80vw; /* Adjust the width for smaller screens */
+    height: auto;
+  }
+}
+
+
+/* Text Styling for Testimonials */
+.testimonial p {
+  color: black; /* White text in testimonials */
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+  .footer-section {
+    background-color: #fff;  /* white background */
+    padding: 3rem 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    color: #000; /* black text for visibility */
+    font-size: 1.1rem;
+  }
+</style>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,        // false ensures it works on every scroll
+    mirror: false,      // true will repeat animation when scrolling back up
+    anchorPlacement: 'top-bottom' // when top of element hits bottom of screen
+  });
+</script>
+</body>
+</html>

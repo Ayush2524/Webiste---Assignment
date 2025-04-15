@@ -1,4 +1,4 @@
-# Webiste---Assignment
+# Website---Assignment
 
 This repository contains the code for the Nexus Website, an interactive and visually engaging landing page designed to showcase products in the Phones, Accessories, and Account categories. The website features a modern layout with smooth animations and a dynamic user experience, ideal for e-commerce or tech-focused businesses.
 
